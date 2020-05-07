@@ -1,6 +1,6 @@
-
-import {State, Action} from "../../store"
+import {Action} from "../../store"
 import {Reducer} from 'react'
+
 export type LocalState = {
   value: string
 }

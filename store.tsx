@@ -1,4 +1,4 @@
-import React, {createContext, useReducer, Dispatch, Reducer, ReactPropTypes} from 'react'
+import React, {createContext, useReducer, Dispatch, Reducer} from 'react'
 import {
   reducer as RootReducer,
   LocalState as RootReducerState,
@@ -33,12 +33,12 @@ const initialState: State = {
   SecondReducer: SecondReducerInitialState
 }
 
-const Provider = (props: ReactPropTypes) => {
+const Provider = ({children}: {children: React.ReactNode}) => {
   const [state, dispatch] = useReducer(
     combineReducers({RootReducer, SecondReducer}),
     initialState
   )
-  return <Context.Provider value={{state, dispatch}} {...props} />
+  return <Context.Provider value={{state, dispatch}} children={children} />
 }
 
 
