@@ -1,10 +1,10 @@
 
 import {State, Action} from "../../store"
 import {Reducer} from 'react'
-export type state = {
+export type LocalState = {
   value: string
 }
-export const initialState: state = {
+export const initialState: LocalState = {
   value: 'second page initial state'
 }
-export const reducer: Reducer<State, Action> = (state: State, action: Action) => state
+export const reducer: Reducer<LocalState, Action> = (state: LocalState, action: Action) => state

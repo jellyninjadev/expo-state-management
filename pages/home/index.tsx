@@ -4,7 +4,7 @@ import styles from './styles'
 import {Context} from '../../store'
 
 export default () => {
-  const {state: {RootReducer: state}, dispatch} = useContext(Context)
+  const {state, dispatch} = useContext(Context)
 
   useEffect(() => {
     dispatch({type: 'test', payload: {value: 'from dispatch'}})
@@ -13,6 +13,6 @@ export default () => {
   console.log('state', state)
 
   return <View style={styles.container}>
-    <Text>{state.value}</Text>
+    <Text>{state.RootReducer.value}</Text>
   </View>
 }
