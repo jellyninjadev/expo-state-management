@@ -1,10 +1,15 @@
-import {Action} from "../../store"
-import {Reducer} from 'react'
+import {Dispatcher, Reducer} from '../../store'
+
+export enum LocalAction {
+  submit = 'submit'
+}
 
 export type LocalState = {
-  value: string
+  firstName?: string
+  lastName?: string
 }
 export const initialState: LocalState = {
-  value: 'second page initial state'
 }
-export const reducer: Reducer<LocalState, Action> = (state: LocalState, action: Action) => state
+export const reducer: Reducer<LocalState, LocalAction> = (state, action) => {
+  return state
+}
